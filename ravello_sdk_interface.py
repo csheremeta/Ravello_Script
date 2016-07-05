@@ -1,6 +1,6 @@
 #!/usr/bin/python2.7
 
-## This Script is to Process Revallo Stats and process the records
+## This Script is to Process Ravello Stats and process the records
 ## The Script utilizes the Ravello SDK for maximum portability and support.
 ## 
 ## Author: Ahmed Sammoud
@@ -9,9 +9,9 @@
 ## Company: Red Hat, Red Hat University , Intern_Team_2016
 ##
 ## Description :
-##              - This Script main purpose is to Connect to Ravello Website through the Ravello_SDK API and get these info.
+##              - This Script's main purpose is to Connect to Ravello Website through the Ravello_SDK API and get these info.
 ##              - The following is The scope of the project:
-##                                    - Get information from Revallo and store it in a local db
+##                                    - Get information from Ravello and store it in a local db
 
 from ravello_sdk import *
 from ravello_parse import *
@@ -19,12 +19,12 @@ import logging
 import datetime
 import pprint
 
-# Logging level .. Default should be warnning .
+# Logging level .. Default should be warning.
 
 #logging.basicConfig(level=logging.DEBUG)
 #Moved to get from config files
 #user="rhu.script@gmail.com"
-#Pass="go4Red"
+#Pass="" (password removed for security reasons)
 
 
 class Rev_Connect:
@@ -43,10 +43,10 @@ class Rev_Connect:
 
    ## General Login Procedure
     def Rev_Login(self):
-        ## This login uses the informatino provided in the constructor
+        ## This login uses the information provided in the constructor
         ## and Starts the session to be used with the following operations.
 
-        self.logger.debug("  Revallo Login: "+self.username+" .......")
+        self.logger.debug("  Ravello Login: "+self.username+" .......")
         self.Rev_client.login(self.username,self.Password)
 
 
@@ -69,7 +69,7 @@ class Rev_Connect:
         #	self.logger.info('Found Application: {0}'.format(app['id'])
 
         
-    # Get Applcation with a certain ID.
+    # Get Application with a certain ID.
     # The Application returned will be in form of dictionary list
     def Rev_GetAppID(self,ID):
         self.logger.debug("Retrieving APP ID: "+str(ID)+" .")
@@ -103,7 +103,7 @@ class Rev_Connect:
         return total, applist
 
         
-    # Get all applications cost since the begginng of the month
+    # Get all applications cost since the beginning of the month
     # Returns charges for month as a dict, and list of apps charges
     def Rev_GetBillingToMonth(self):
         self.logger.debug("Retrieve Billing Since beging of this Month <"+datetime.datetime.now().strftime("%m %Y")+">")
@@ -111,7 +111,7 @@ class Rev_Connect:
         total,applist = self.__bill__(billing)
         return {"month": datetime.datetime.now().strftime("%m %Y"),"total" : total,"appList": applist }
         
-    # Get all applications cost since the begginng of the month
+    # Get all applications cost since the beginning of the month
     # The Format for the month is XX
     # The Format for the Year is XXXX
     # Returns only the total charges for that month(float).
