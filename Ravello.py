@@ -1,5 +1,5 @@
 #!/usr/bin/python2.7
-## This Script is to Process Revallo Stats and process the records
+## This Script is to Process Ravello Stats and process the records
 ##
 ## Author: Ahmed Sammoud
 ## Date:   June, 2016
