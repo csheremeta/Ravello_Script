@@ -1,5 +1,5 @@
 #!/usr/bin/python2.7
-## This Script is to Process Revallo Stats and process the records
+## This Script is to Process Ravello Stats and process the records
 ##
 ## Author: Ahmed Sammoud
 ## Date:   June, 2016
@@ -7,14 +7,14 @@
 ## Company: Red Hat, Red Hat University , Intern_Team_2016
 ##
 ## Description :
-##              - This Script main purpose is to be the main module for the Interface with Revallo Data_Stats Project
-##              - The following is The scope of the project:
-##                                    - Get information from Revallo and store it in a local db
+##              - This script's main purpose is to be the main module for the Interface with Ravello Data_Stats Project
+##              - The following is the scope of the project:
+##                                    - Get information from Ravello and store it in a local db.
 ##                                    - Form a User interface to query the DB.
 ##                                    - Automate the update procedure.
 ##
 ##              - The Script runs in the following phases:        
-##              --            1- Main module runs and start Either: Report_Gen  /OR/ 
+##              --            1- Main module runs and starts Either: Report_Gen  /OR/ 
 ##                              (Update recodes with Rev_Interface or CSV_IMP ) /OR/
 ##                              Both ** Run import then generate report.
 ##
@@ -61,8 +61,8 @@ def main():
                                      description='Ravello Stats Storing/Reporting tool:')
     
     parser.add_argument('-import_csv',nargs=2,metavar =('File_Name','"MM YYYY"') ,help="tell script to import from a csv into local db - Provide date 'MM YYYY' ")
-    parser.add_argument('-gdb',metavar = '"MM YYYY"',nargs=1,help="Get Data from Revallo, store it in Local DB - Provide date")
-    parser.add_argument('-gdbr',metavar = '"MM YYYY"',nargs=1,help = "Get Data from Revallo and Generate a report - Provide date")
+    parser.add_argument('-gdb',metavar = '"MM YYYY"',nargs=1,help="Get Data from Ravello, store it in Local DB - Provide date")
+    parser.add_argument('-gdbr',metavar = '"MM YYYY"',nargs=1,help = "Get Data from Ravello and Generate a report - Provide date")
     parser.add_argument('-report',metavar = ('"MM YYYY"', '"Report_On"'), nargs=2,
                         help ='''Generate a Report from Local DB. 
                                  Report_On can be one of the following [ALL - Users - Departments - Regions].
@@ -100,7 +100,7 @@ def main():
      
 
     ######################################3
-    # Actual Processing Initited
+    # Actual Processing Initiated
     #
     
     args = parser.parse_args()
