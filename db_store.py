@@ -1,6 +1,6 @@
 #!/usr/bin/python2.7
 
-## This Script is to Process Revallo data and store the records into a DB
+## This Script is to Process Ravello data and store the records into a DB
 ## The main DB will be Mongodb since the data is in the form of JSON.
 ##
 ## The Script is an interface to simplify the storing and retrieving process.
@@ -11,7 +11,7 @@
 ## Company: Red Hat, Red Hat University , Intern_Team_2016
 ##
 ## Description :
-##              - This Script main purpose is to provide an interface to the DB
+##              - This Script's main purpose is to provide an interface to the DB
 ##
 ##
 
@@ -27,10 +27,11 @@ def enum(**name):
 
 
 # This class is an interface for the DB operations on the Rev_DB
-# Mainly the DB should be on Mongodb, but in case different DB was use, this should provide the isolation needed.
+# Mainly the DB should be on Mongodb, but in case different DB was used, this should provide the isolation needed.
 
 # Rev_Store : Main methods are
-#  - Store : Takes in the name of collection to store the record in .. This name should be selected from the DB_Table item. "See Table Overview below ".
+#  - Store : Takes in the name of collection to store the record in .. This name should be selected from the 
+#             DB_Table item. "See Table Overview below ".
 #
 #     An intial overview on the collections on mongo
 #      - Apps     :Collection of information about apps
@@ -65,7 +66,7 @@ class Rev_Store:
         self.logger = logging.getLogger('__Rev_Store__')
 	self.logger.debug("Rev_Store intiailized")
 
-    # Store information on the corsiponding collection,
+    # Store information on the corresponding collection,
     # db: Must be one of the DB_Table values
     # returns an object of type
     
@@ -204,7 +205,7 @@ class Rev_Store:
         self.logger.debug("# of found records :"+str(result.alive) +" In Collection:"+Coll.full_name)
         return result
 
-    # Get_BillDept : Return Bill information for specfic Dept
+    # Get_BillDept : Return Bill information for specific Dept
     # Dept : Department
     # Returns total sum
 
@@ -291,7 +292,7 @@ class Rev_Store:
 
         # User/Dept/Courses stats for 3,6,9, 1 year
         # - Usage: time, Total, courses.
-        # Use seperete reports 
+        # Use separate reports 
         
         
         list = []
@@ -580,7 +581,7 @@ class Rev_Store:
     
     
     # Report Total for Each Region, Per Month.
-    # For each course generate the follwoing
+    # For each course generate the following
     # - Total 
     # - # of users
 
