@@ -7,13 +7,13 @@
 ## Company: Red Hat, Red Hat University , Intern_Team_2016
 ##
 ## Description :
-##              - This Script main purpose is to read in ".csv" file and extract the needed information for data analysis.
+##              - This Script's main purpose is to read in ".csv" file and extract the needed information for data analysis.
 ##              - The Script runs in three phases:        
 ##              --            1- It uses the csv package and start reading Rows from the file in the Starter module.
 ##              --            2- It uses the Extract_Info function to extract the needed info from columns in each row.
 ##              --            3- The Process_Data function is used to :
 ##                                1- clean up the data from each columns
-##                                2-populate the needed data structures.
+##                                2- populate the needed data structures.
 ##              --            
 ##              --    Starter --> Extract_Info --> Process_Data  
 ##
@@ -51,7 +51,7 @@ class CSV_Import:
                 #_________________________________
                 # The names of the keys match the names from Ravello Rest API, That to ensure consistency among modules.
                 #__________________________________
-                #TIP for Self: Be a smart and make this a golbal unified dictionary.
+                #TIP for Self: Be smart and make this a global unified dictionary.
                 
                 Info["applicationId"] = Row[0]
                 Info["appName"] = Row[1] # Applicaiton Name
