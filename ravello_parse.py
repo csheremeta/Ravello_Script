@@ -7,9 +7,9 @@
 ## Company: Red Hat, Red Hat University , Intern_Team_2016
 ##
 ## Description :
-##              - This Script main purpose is to take :
+##              - This Script's main purpose is to take :
 ##                   --  dict element "Usually from the "Ravello site/Rest API interface"
-##                   --  Or row "Usuall from the .csv file".
+##                   --  Or row "Usually from the .csv file".
 ##              - Return a dictionary -"Key:value"- with the extract, clean info.
 ##       
 
@@ -52,7 +52,7 @@ class Rev_Parse:
 
 
     # The Goal of this function is to Clean up the blueprint naming convention and
-    # most importantly is gather all the checks "Rules " in one place to aviod maddness.
+    # most importantly is gather all the checks "Rules" in one place to avoid madness.
     # Used by : Parse_AppInfo, Parse_AppBillingInfo
         
     def __Get_Bp_class__(self,bp):
@@ -61,7 +61,7 @@ class Rev_Parse:
         ##This step is to correctly assign the blueprint name.
         dict["blueprint"]     = bp.strip() if not bp.startswith("Copy of ") else bp.strip()[8:]
 
-        ## Get the class name from the blueprint -- Different cases beacuse of the inconsistency.
+        ## Get the class name from the blueprint -- Different cases because of the inconsistency.
         if dict["blueprint"].startswith("GSS") or dict["blueprint"].startswith("gss") :
             dict["class"]        =  (dict["blueprint"][4:]).upper()
         elif re.search('\D\D\d\d\d',dict["blueprint"]) is not None:
@@ -75,7 +75,7 @@ class Rev_Parse:
         
     # Takes in App info record for an App,
     # Returns a dictionary with the following items:
-    # username , class, blueprint, class, applicationId,published, owner, department.
+    # username, class, blueprint, class, applicationId, published, owner, department.
 
     def Parse_AppInfo(self,record):
         try:
@@ -114,7 +114,7 @@ class Rev_Parse:
             self.logger.debug("APP_Info_>> Result :"+str(pp.pprint(dict)))
 
     # Only process the charges entry in ravello data,
-    # This most probably to be used with total billing for specfic months.
+    # This most probably to be used with total billing for specific months.
     # Returns a float.
     def Parse_Total_BillingMonth(self,records):
         self.logger.debug("Parse Total Billing month ")
@@ -130,7 +130,7 @@ class Rev_Parse:
     
     # Takes in Billing record for an App,
     # Returns a dictionary with the following items:
-    # username , class, bp, total, status, owner, region, uptime.
+    # username, class, bp, total, status, owner, region, uptime.
     def Parse_AppBillingInfo(self,record):
         dict = {}
         app_name = record['appName']
